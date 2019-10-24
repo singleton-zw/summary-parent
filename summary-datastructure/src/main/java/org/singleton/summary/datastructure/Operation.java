@@ -1,3 +1,4 @@
+
 package org.singleton.summary.datastructure;
 
 /**
@@ -10,11 +11,14 @@ package org.singleton.summary.datastructure;
 public class Operation {
     public static void main(String[] args) {
 //       leftBitwiseOperators();
-        basicBitwiseOperators();
+        rightBitwiseOperators();
+//        basicBitwiseOperators();
+//        addBitwiseOperators();
     }
 
     /**
      * 皆属于位运算符.其运算比乘除快
+     * https://blog.csdn.net/koreyoshi326/article/details/85008708
      * 左移
      */
     public static void leftBitwiseOperators() {
@@ -33,8 +37,32 @@ public class Operation {
         /**
          * 转二进制
          */
-        Integer i = 18;
+        Integer i = (-3 << 2);
+        System.out.println(i);
         System.out.println(Integer.toBinaryString(i));
+    }
+
+
+
+    public static void rightBitwiseOperators() {
+        /**
+         * 右移,右边补0
+         * 右移一位相当于除以2的一次方，右移n位相当于除以2的n次方。
+         * 下图相当于 1 / 2的1 次方 就是  2  取模
+         */
+        int  s = -9 >> 2;
+        System.out.println(s);
+//        /**
+//         *  2 * 2 的5 次方
+//         *  2 * 32
+//         */
+//        System.out.println("3 << 5:   " + (3 << 5));
+//
+//        /**
+//         * 转二进制
+//         */
+//        Integer i = 18;
+        System.out.println(Integer.toBinaryString(s));
     }
 
     /**
@@ -55,4 +83,36 @@ public class Operation {
         System.out.println(b);
     }
 
+    /**
+     * j=j++和j=++j
+     * 在这里JVM里面有两个存储区，一个是暂存区（以下称为堆栈），另一个是变量区。
+     * j=j++是先将j的值（0，原始值）存入堆栈中（对应图中分配一块新的内存空间），然后对变量区中j自加1，这时j的值确实是1，但随后将堆栈中的值赋给变量区的j，所以最后j=0;
+     * 而j=++j，是先对变量区中的j加1，再将变量区中的j值（1）存入堆栈，最后将堆栈中的值赋给自变量区的j，所以j=1;
+     * <p>
+     * 总结： java使用了中间缓存变量的机制
+     * 对于j=j++可以换种写法：
+     * temp=j;
+     * j=j+1;
+     * j=temp;
+     * 对于j=++j可以换种写法：
+     * j=j+1;
+     * temp=j;
+     * j=temp;
+     */
+    public static void addBitwiseOperators() {
+        int j = 0;
+        int g = 0;
+        for (int i = 0; i < 10; i++) {
+            j = j++;
+
+            g = ++g;
+//            System.out.println(j++);
+        }
+        System.out.println(j);
+        System.out.println(g);
+    }
+
 }
+
+
+
