@@ -13,6 +13,8 @@ import java.util.Arrays;
  * 基本思想: 冒泡排序，类似于水中冒泡，较大的数沉下去，较小的数慢慢冒起来，假设从小到大，即为较大的数慢慢往后排，较小的数慢慢往前排。
  * 直观表达，每一趟遍历，将一个最大的数移到序列末尾。
  *
+ *
+ * 冒泡排序的基本思想是：每次比较两个相邻的元素，如果它们的顺序错误就把它们交换过来。
  */
 public class BubbleSort {
     public static void main(String[] args) {
@@ -37,7 +39,7 @@ public class BubbleSort {
     private static void bubbleSort(int[] arr) {
         for(int i = 0;i<arr.length ;i++){
             for (int j = i+1; j < arr.length; j++) {
-                if(arr[i] > arr[j]){
+                if(arr[i] > arr[j]){//这里可以实现升序  降序
                     int temp = arr[i];
                     arr[i] = arr[j];
                     arr[j]= temp;
