@@ -27,8 +27,17 @@ public class TwoSumii_167 {
      */
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
+        int[] b = new int[4];
+        System.arraycopy(nums,0,b,0, nums.length);
+        System.out.println(System.identityHashCode(nums));
+        System.out.println(System.identityHashCode(b));
+        b[1] = -2;
         System.out.println(Arrays.toString(nums));
-        System.out.println(Arrays.toString(twoSum2(nums, 17)));
+        nums[1] = -1;
+        System.out.println(Arrays.toString(nums));
+
+        System.out.println(Arrays.toString(b));
+//        System.out.println(Arrays.toString(twoSum2(nums, 17)));
     }
 
     /**
@@ -90,6 +99,14 @@ public class TwoSumii_167 {
         throw new RuntimeException("在数组中没有找到这样的两个数，使得它们的和为指定值");
     }
 
+    /**
+     *
+     * @param nums
+     * @param left
+     * @param right
+     * @param target
+     * @return
+     */
     public int binarySearch(int[] nums, int left, int right, int target) {
         while (left < right) {
             int mid = (left + right) >>>  1;

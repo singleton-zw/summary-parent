@@ -11,6 +11,7 @@
     <modules>
         <module>summary-datastructure</module>
         <module>summary-algorithm</module>
+        <module>summary-designpattern</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

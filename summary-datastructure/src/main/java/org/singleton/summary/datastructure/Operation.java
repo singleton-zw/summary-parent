@@ -10,8 +10,8 @@ package org.singleton.summary.datastructure;
  */
 public class Operation {
     public static void main(String[] args) {
-//       leftBitwiseOperators();
-        rightBitwiseOperators();
+       leftBitwiseOperators();
+//        rightBitwiseOperators();
 //        basicBitwiseOperators();
 //        addBitwiseOperators();
     }
@@ -27,12 +27,12 @@ public class Operation {
          * 左移一位相当于乘以2的一次方，左移n位相当于乘以2的n次方。
          * 下图相当于 1 * 2的1 次方 就是  2
          */
-        System.out.println(1 << 1);
+        System.out.println((29 << 113)%113);
         /**
          *  2 * 2 的5 次方
          *  2 * 32
          */
-        System.out.println("3 << 5:   " + (3 << 5));
+        System.out.println("3 << 5:   " + (1 << 3));
 
         /**
          * 转二进制
